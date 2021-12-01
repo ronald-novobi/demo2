@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="contact_form_view_inherit" model="ir.ui.view">
+        <field name="name">	website_sale.header_cart_link.inherit</field>
+
+        <field name="inherit_id" ref="header_cart_link"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <field name="type">qweb</field>
+            <data>
+                <xpath expr="//t[@set='show_cart']" position="replace">
+                <t t-set="show_cart" t-value="false"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+
+</odoo>
