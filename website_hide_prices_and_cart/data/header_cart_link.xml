@@ -10,7 +10,7 @@
 
             <data>
                 <xpath expr="//t[@t-set='show_cart']" position="replace">
-                <t t-set="show_cart" t-value="false"/>
+                <t t-set="show_cart" t-value="user_id.partner_id.status=='Approved'"/>
                 </xpath>
             </data>
         </field>
