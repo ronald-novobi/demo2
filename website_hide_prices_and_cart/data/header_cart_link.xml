@@ -51,7 +51,7 @@
                         </form>
                         <p t-elif="not product.active and user_id.partner_id.status=='Approved'" class="alert alert-warning">This product is no longer available.</p>
                         <p t-elif="user_id.partner_id.status=='Approved'" class="alert alert-warning">This product has no valid combination.</p>
-                        <p t-else="" class="alert alert-warning">Please complete registration process to see pricing add to cart.</p>
+                        <p t-else="" class="alert alert-warning">Please complete registration process to see pricing & add to cart.</p>
                         <hr t-if="product.description_sale"/>
                         <div>
                             <p t-field="product.description_sale" class="text-muted mt-3" placeholder="A short description that will also appear on documents."/>
