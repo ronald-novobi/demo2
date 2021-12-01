@@ -16,6 +16,28 @@
         </field>
     </record>
 
+    <record id="website_sale_products_item_inherit" model="ir.ui.view">
+        <field name="name">	website_sale.products_item.inherit</field>
+
+        <field name="inherit_id" ref="website_sale.products_item"/>
+        <field name="priority">100</field>
+        <field name="type">qweb</field>
+        <field name="arch" type="xml">
+
+            <data>
+                <xpath expr="//div[@class='product_price']" position="replace">
+                    <div class="product_price" t-if="user_id.partner_id.status=='Approved'" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                    <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                    </div>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+
     <record id="website_sale_product_inherit" model="ir.ui.view">
         <field name="name">	website_sale.product.inherit</field>
 
