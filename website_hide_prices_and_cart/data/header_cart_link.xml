@@ -5,8 +5,9 @@
 
         <field name="inherit_id" ref="website_sale.header_cart_link"/>
         <field name="priority">100</field>
+        <field name="type">qweb</field>
         <field name="arch" type="xml">
-            <field name="type">qweb</field>
+            
             <data>
                 <xpath expr="//t[@set='show_cart']" position="replace">
                 <t t-set="show_cart" t-value="false"/>
