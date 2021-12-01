@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="contact_form_view_inherit" model="ir.ui.view">
+    <record id="website_sale_view_inherit" model="ir.ui.view">
         <field name="name">	website_sale.header_cart_link.inherit</field>
 
-        <field name="inherit_id" ref="header_cart_link"/>
+        <field name="inherit_id" ref="website_sale.header_cart_link"/>
         <field name="priority">100</field>
         <field name="arch" type="xml">
             <field name="type">qweb</field>
