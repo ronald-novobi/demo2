@@ -41,7 +41,7 @@
         <field name="name">	website_sale.website_sale_products_search_box.inherit</field>
 
         <field name="inherit_id" ref="website_sale.website_sale_products_search_box"/>
-        <field name="priority">100</field>
+        <field name="priority">10</field>
         <field name="type">qweb</field>
         <field name="arch" type="xml">
 
