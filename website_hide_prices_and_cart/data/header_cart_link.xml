@@ -36,7 +36,22 @@
             </data>
         </field>
     </record>
+    
+    <record id="website_sale_website_sale_products_search_box_inherit" model="ir.ui.view">
+        <field name="name">	website_sale.website_sale_products_search_box.inherit</field>
 
+        <field name="inherit_id" ref="website_sale.website_sale_products_search_box"/>
+        <field name="priority">100</field>
+        <field name="type">qweb</field>
+        <field name="arch" type="xml">
+
+            <data>
+                <xpath expr="//attribute[@name='data-display-price']" position="replace">
+                    <attribute t-if="user_id.partner_id.status=='Approved'" name="data-display-price">true</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
 
     <record id="website_sale_product_inherit" model="ir.ui.view">
         <field name="name">	website_sale.product.inherit</field>
